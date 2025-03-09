@@ -1,11 +1,11 @@
 """
-Dümen Dünyam - Satranç Taş Seçim Ruleti Uygulaması
+Dümen Dünyam - Satranç Taş Seçim Dümeni Uygulaması
 
 Bu uygulama, Lichess'te aktif satranç oyunu oynayan kullanıcıların,
 oyunlarında hangi taşı oynayacaklarını rastgele belirleyen eğlenceli
-bir rulet sistemi sunar.
+bir dümen sistemi sunar.
 
-Geliştirici: Dümen Dünyam Ekibi
+Geliştirici: brnceran
 Versiyon: 1.0
 """
 import sys

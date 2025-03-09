@@ -8,6 +8,7 @@ bir rulet sistemi sunar.
 Geliştirici: Dümen Dünyam Ekibi
 Versiyon: 1.0
 """
+import sys
 import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
@@ -194,12 +195,12 @@ class DumenApp:
         # Ok resmi yükleme
         try:
             # Ok görselinin dosya yolunu belirle
-            arrow_path = os.path.join(os.path.dirname(__file__), "arrow.png")
+            arrow_path = os.path.join(os.path.dirname(sys.executable), "arrow.png")
             
             # Dosya yoksa basit bir ok görüntüsü oluştur
             if not os.path.exists(arrow_path):
                 self.create_arrow_image()
-                arrow_path = os.path.join(os.path.dirname(__file__), "arrow1.png")
+                arrow_path = os.path.join(os.path.dirname(sys.executable), "arrow1.png")
             
             # Ok görüntüsünü yükle ve boyutlandır
             arrow_img = Image.open(arrow_path)
@@ -227,7 +228,7 @@ class DumenApp:
         draw.polygon([(0, 20), (0, 40), (80, 30)], fill=(255, 0, 0, 255))
         
         # Oluşturulan görüntüyü kaydet
-        img_path = os.path.join(os.path.dirname(__file__), "arrow.png")
+        img_path = os.path.join(os.path.dirname(sys.executable), "arrow.png")
         img.save(img_path)
 
     def set_username(self):
@@ -524,14 +525,15 @@ class DumenApp:
         önbelleğe alınır.
         """
         try:
-            # Betiğin bulunduğu dizinde dümen görselini ara
-            wheel_path = os.path.join(os.path.dirname(__file__), "dumen.png")
+            # exeninin bulunduğu dizinden dümen resmini yükle
+            wheel_path = os.path.join(os.path.dirname(sys.executable), "dumen.png")            
             
             # Dosyanın var olup olmadığını kontrol et
             if not os.path.exists(wheel_path):
                 # Görsel yoksa varsayılan bir dümen oluştur
-                self.create_default_wheel()
-                wheel_path = os.path.join(os.path.dirname(__file__), "dumen.png")
+                # self.create_default_wheel()
+                # wheel_path = os.path.join(os.path.dirname(__file__), "dumen.png")
+                FileNotFoundError("Dümen resmi bulunamadı.")
             
             # Görseli yükle
             original_image = Image.open(wheel_path)

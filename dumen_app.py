@@ -389,7 +389,7 @@ class DumenApp:
             # Hareket edebilen benzersiz taşları tespit et
             piece_map = self.board.piece_map()
             movable_pieces = []
-            
+
             # Taş tiplerini Türkçe isimlerle eşleştir
             piece_names = {
                 chess.PAWN: "Piyon",
